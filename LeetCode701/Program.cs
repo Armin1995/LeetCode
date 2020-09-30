@@ -10,6 +10,7 @@ namespace LeetCode701
     {
         static void Main(string[] args)
         {
+
         }
     }
 
