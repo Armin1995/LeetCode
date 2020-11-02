@@ -10,26 +10,26 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Solid main = new Solid("A");
-            Solid add = new Solid("B");
-            Dictionary<Solid, MainAddType> solidDict = new Dictionary<Solid, MainAddType>()
+            var solidList = new List<string>() { "A", "B", "C", "D" };
+            var MainAddDict = new Dictionary<string, MainAddType>()
             {
-                { new Solid("C"), MainAddType.Add },
-                { new Solid("D"), MainAddType.Main },
+                {"C",MainAddType.Main },
+                {"D",MainAddType.Add },
             };
-            List<CalculateType> calTypes = new List<CalculateType>()
+            var calList = new List<CalculateType>()
             {
-                CalculateType.Intersect,
-                CalculateType.Except,
                 CalculateType.Union,
+                CalculateType.Except,
+                CalculateType.Except,
             };
-            CalculateClass c = new CalculateClass();
-            c.Calculate();
+
+            CalculateClass calculateClass = new CalculateClass(solidList, MainAddDict, calList);
         }
     }
 
     enum MainAddType
     {
+        Non,
         Main,
         Add,
     }
@@ -43,18 +43,94 @@ namespace ConsoleApp1
 
     class CalculateClass
     {
-        public string Calculate(Solid main, Solid add, Dictionary<Solid, MainAddType> solidDict, List<CalculateType> calTypes)
-        {
+        private string main;
+        private string add;
 
+        public CalculateClass(List<string> solidList, Dictionary<string, MainAddType> mainAddDict, List<CalculateType> calList)
+        {
+            main = solidList[0];
+            add = solidList[1];
+
+            for (int i = 0; i < calList.Count; i++)
+            {
+                var a = solidList[i];
+                var b = solidList[i + 1];
+                if (mainAddDict.ContainsKey(a))
+                {
+                    switch (mainAddDict[a])
+                    {
+                        case MainAddType.Non:
+                            break;
+                        case MainAddType.Main:
+                            a = Main(a);
+                            break;
+                        case MainAddType.Add:
+                            a = Add(a);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                if (mainAddDict.ContainsKey(b))
+                {
+                    switch (mainAddDict[b])
+                    {
+                        case MainAddType.Non:
+                            break;
+                        case MainAddType.Main:
+                            b = Main(b);
+                            break;
+                        case MainAddType.Add:
+                            b = Add(b);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                switch (calList[i])
+                {
+                    case CalculateType.Intersect:
+                        solidList[i + 1] = Intersect(a, b);
+                        break;
+                    case CalculateType.Union:
+                        solidList[i + 1] = Union(a, b);
+                        break;
+                    case CalculateType.Except:
+                        solidList[i + 1] = Except(a, b);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            Console.WriteLine(solidList.Last());
+            Console.ReadKey();
         }
-    }
 
-    class Solid
-    {
-        public string Name { get; set; }
-        public Solid(string name)
+        private string Intersect(string a, string b)
         {
-            this.Name = name;
+            return "(" + a + " ∩ " + b + ")";
+        }
+
+        private string Union(string a, string b)
+        {
+            return "(" + a + " ∪ " + b + ")";
+        }
+
+        private string Except(string a, string b)
+        {
+            return "(" + a + " - " + b + ")";
+        }
+
+        private string Main(string a)
+        {
+            return "(" + main + " ∩ " + a + ")";
+        }
+
+        private string Add(string a)
+        {
+            return "(" + Except(add, main) + " ∩ " + a + ")";
         }
     }
 }
