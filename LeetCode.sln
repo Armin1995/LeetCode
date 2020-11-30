@@ -95,6 +95,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode452", "LeetCode452\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode222", "LeetCode222\LeetCode222.csproj", "{6B240405-FE82-4255-A37B-F560A58D7F77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode1370", "LeetCode1370\LeetCode1370.csproj", "{3CFACBD4-51AB-4D17-B0AA-62A1441E7885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadixSort", "RadixSort\RadixSort.csproj", "{57B16245-3B23-4C12-987B-0F0D30BEF5C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode164", "LeetCode164\LeetCode164.csproj", "{C04B8957-FE8F-4E84-861D-1D313E811E36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode454", "LeetCode454\LeetCode454.csproj", "{67AC4739-415E-4717-8D35-33F7FC35A262}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode767", "LeetCode767\LeetCode767.csproj", "{278E5EC4-AE87-462D-8BEC-006A703ADDAA}"
 EndProject
 Global
@@ -287,10 +295,6 @@ Global
 		{6B240405-FE82-4255-A37B-F560A58D7F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B240405-FE82-4255-A37B-F560A58D7F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B240405-FE82-4255-A37B-F560A58D7F77}.Release|Any CPU.Build.0 = Release|Any CPU
-		{278E5EC4-AE87-462D-8BEC-006A703ADDAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{278E5EC4-AE87-462D-8BEC-006A703ADDAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{278E5EC4-AE87-462D-8BEC-006A703ADDAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{278E5EC4-AE87-462D-8BEC-006A703ADDAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
