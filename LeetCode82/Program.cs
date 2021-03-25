@@ -48,7 +48,7 @@ namespace LeetCode82
     {
         public ListNode DeleteDuplicates(ListNode head)
         {
-
+            return null;
         }
 
     }
