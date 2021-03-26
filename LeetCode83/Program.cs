@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 /// <summary>
-/// 82. 删除排序链表中的重复元素 II
+/// 83. 删除排序链表中的重复元素
 /// </summary>
-namespace LeetCode82
+namespace LeetCode83
 {
-
     class Program
     {
         static void Main(string[] args)
@@ -55,7 +54,7 @@ namespace LeetCode82
                 if (cur.next.val == cur.next.next.val)
                 {
                     var val = cur.next.val;
-                    while (cur.next != null && cur.next.val == val)
+                    while (cur.next.next != null && cur.next.next.val == val)
                     {
                         cur.next = cur.next.next;
                     }
@@ -69,6 +68,5 @@ namespace LeetCode82
 
             return dummy.next;
         }
-
     }
 }
