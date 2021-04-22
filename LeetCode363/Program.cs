@@ -10,11 +10,11 @@ namespace LeetCode363
     {
         static void Main(string[] args)
         {
-            int[,] array = new int[,] { };
-            Solution s = new Solution();
-            var r = s.MaxSumSubmatrix();
-            Console.WriteLine(r);
-            Console.ReadKey();
+            //int[,] array = new int[,] { };
+            //Solution s = new Solution();
+            //var r = s.MaxSumSubmatrix();
+            //Console.WriteLine(r);
+            //Console.ReadKey();
         }
     }
 

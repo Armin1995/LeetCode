@@ -153,6 +153,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode28", "LeetCode28\Le
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode91", "LeetCode91\LeetCode91.csproj", "{DF0AE6CD-5DEB-4549-B374-7AF28F20908C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode363", "LeetCode363\LeetCode363.csproj", "{06E7D3DE-97D8-4668-8842-12C087AA9CEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -459,6 +461,10 @@ Global
 		{DF0AE6CD-5DEB-4549-B374-7AF28F20908C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF0AE6CD-5DEB-4549-B374-7AF28F20908C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF0AE6CD-5DEB-4549-B374-7AF28F20908C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06E7D3DE-97D8-4668-8842-12C087AA9CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06E7D3DE-97D8-4668-8842-12C087AA9CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06E7D3DE-97D8-4668-8842-12C087AA9CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06E7D3DE-97D8-4668-8842-12C087AA9CEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
