@@ -28,14 +28,22 @@ namespace LeetCode897
 
     public class Solution
     {
+        TreeNode cur;
         public TreeNode IncreasingBST(TreeNode root)
         {
-            TreeNode parentNode = null, childNode = null;
+            var dummy = new TreeNode();
+            cur = dummy;
+            Helper(root);
+            return dummy.right;
         }
-
-        public TreeNode GetLeftChild(TreeNode )
+        private void Helper(TreeNode node)
         {
-
+            if (node == null) return;
+            Helper(node.left);
+            node.left = null;
+            cur.right = node;
+            cur = node;
+            Helper(node.right);
         }
     }
 }
