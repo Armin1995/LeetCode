@@ -10,6 +10,11 @@ namespace LeetCode1011
     {
         static void Main(string[] args)
         {
+            Solution s = new Solution();
+
+            int[] weights = new int[] { 10, 9, 5, 11, 6, 7 };
+
+            s.ShipWithinDays(weights, 1);
         }
     }
 
@@ -18,39 +23,46 @@ namespace LeetCode1011
         public int ShipWithinDays(int[] weights, int D)
         {
             int minWeight = weights.Max();
-            var sum = weights.Sum();
-            while (minWeight * D < sum)
-            {
-                minWeight++;
-            }
+            int maxWeight = weights.Sum();
 
-
-
-            if (turns <= D)
+            while (minWeight < maxWeight)
             {
-                return minWeight;
-            }
-            else
-            {
-                minWeight++;
+                int mid = (minWeight + maxWeight) / 2;
+                var turn = GetTurns(weights, mid);
+                if (turn <= D)
+                {
+                    maxWeight = mid;
+                }
+                else
+                {
+                    minWeight = mid + 1;
+                }
             }
 
             return minWeight;
         }
 
-        private int GetTurns(int[] weights, int minWeight)
+        private int GetTurns(int[] weights, int perTurnWeight)
         {
             int turns = 0;
             int curWeight = 0;
             int index = 0;
-            while (index < weights.Length && curWeight <= minWeight)
+            while (index < weights.Length)
             {
-                curWeight += weights[index];
+                var tempWeight = curWeight + weights[index];
+                if (tempWeight > perTurnWeight)
+                {
+                    turns++;
+                    curWeight = weights[index];
+                }
+                else
+                {
+                    curWeight += weights[index];
+                }
                 index++;
             }
-            turns++;
 
-            return turns;
+            return turns + 1;
         }
     }
 }
