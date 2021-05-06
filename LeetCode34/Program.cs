@@ -41,7 +41,6 @@ namespace LeetCode34
             }
 
             return result;
-            return result;
         }
     }
 }
